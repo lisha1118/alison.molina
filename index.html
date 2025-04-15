@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida CV - Alison Lizeth Molina Pullutasig </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Calibri', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #b5bbd1;
+            color: white;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            background: white;
+            color: #150b42;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .contact-info, .links {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .contact-info a, .links a {
+            color: rgb(207, 203, 203);
+            text-decoration: none;
+            display: block;
+            margin-top: 5px;
+        }
+        .contact-info a:hover, .links a:hover {
+            text-decoration: underline;
+        }
+        .bio h2, .interests h2, .portfolio h2 {
+            border-bottom: 2px solid #1a2c3e;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #1a2c3e;
+        }
+        .bio p, .interests ul {
+            font-size: 14px;
+            color: #1a2c3e;
+        }
+        .interests ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            width: 40%;
+            background: #102e4e;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 150px;
+            height: 185px;
+            border-radius: 100%;
+            border: 3px solid rgb(255, 255, 255);
+            margin-bottom: 15px;
+        }
+        .sidebar h2 {
+            font-size: 22px;
+        }
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-info p {
+            font-size: 100px;
+            margin: 10px 0;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+            .contact-info a i {
+            font-size: 20px;
+            margin-right: 10px;
+            background: white;
+            color: #112a44;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            width: 70%;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .title {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a2c3e;
+        }
+        .bio, .portfolio {
+            margin-bottom: 20px;
+        }
+        .bio h2, .portfolio h2 {
+            color: #112a44;
+            border-bottom: 2px solid #112a44;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .bio p {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        .interests li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        /* Portafolio */
+        .portfolio .tabs {
+            display: flex;
+            justify-content: space-around;
+            background: #1a2c3e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .portfolio .tabs div {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .portfolio .tabs div:hover {
+            background: #32427b;
+        }
+        .portfolio .tabs div.active {
+            background: #448aaf;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #1a2c3e;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Botones de años */
+        .year {
+            background: #bdc3c7;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .year:hover {
+            background: #448aaf;
+        }
+        .year-content {
+            display: none;
+            padding: 5px 15px;
+            background: white;
+            border-left: 4px solid #2c3e50;
+            margin-top: 5px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            .main-content {
+                width: 100%;
+                padding: 20px;
+            }
+            .portfolio .tabs {
+                flex-direction: column;
+            }
+            .sidebar a i {
+            font-size: 100px;
+            margin-right: 10px;
+            background: white;
+            color: #112a44;
+            padding: 5px;
+            border-radius: 5px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img src="IMG_5354.jpg" alt="Foto de perfil">
+            <h2>ALISON LIZETH </h2>
+            <h2> MOLINA PULLUTASIG</h2>
+                
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+            <div class="contact-info">
+
+                <h3>CONTACTO</h3>
+                <a href="tel:+593998725668"><i class="fas fa-phone"></i> +593 998 725 668</a>
+                <a href="mailto:alison.molina0022@gmail.com"><i class="fas fa-envelope"></i> alison.molina0022@gmail.com</a>
+
+                <p>
+
+                </p>
+                <h3>LINKS EXTERNOS</h3>
+                <p>
+
+                </p>
+                <a href="https://www.linkedin.com/in/alison-molina-10b221355/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://drive.google.com/file/d/1sTYYQtEcjREaU8Fe7OwatwKuyBItx_le/view?usp=sharing" target="_blank"><i class="fa-regular fa-file-pdf"></i> Hoja de Vida PDF</a>
+            </div>
+        </div>
+
+
+        <!-- Sección Principal -->
+        <div class="main-content">
+            <div class="title">Hoja de Vida</div>
+
+            <div class="bio">
+                <h2><em>Perfil</em></h2>
+                <p>Nací en Latacunga - Ecuador en 2002. Recibí mi grado como <strong>Ingeniera en Logística y Transporte</strong> de
+                    la <strong>Universidad Politécnica Estatal del Carchi</strong>, Tulcán - Ecuador, en 2025. Con una sólida formación en la
+                    optimización de procesos logísticos, el diseño de estrategias de abastecimiento y distribución, y la gestión
+                    eficiente de la cadena de suministros. Capaz de aplicar conocimientos científicos y tecnológicos (TICs
+                    aplicadas a la logística) para resolver problemas del sector productivo, promoviendo la automatización,
+                    sistematización y modelación de procesos. Con un enfoque interdisciplinario, integridad profesional, innovación,
+                    disciplina y responsabilidad.</p>
+                <p> Formada para la implementacion de soluciones logísticas innovadoras para mejorar el flujo de productos y minimizar 
+                    costos operativos en empresas del sector público y privado.  Habilidad para diseñar e implementar estrategias con visión 
+                    sistémica que incrementen la competitividad empresarial, liderando equipos multidisciplinarios y optimizando procesos de 
+                    almacenamiento, embalaje y distribución dentro de sistemas logísticos multimodales. Manejo de herramientas tecnológicas 
+                    con alta capacidad de adaptacion a cambios globales y el dinamismo del mercado como; planificar y diseñar rutas optimas 
+                    de transporte con sistemas de informacion geográficas <strong>(SIG) - ArcGIS</strong>, manejo de herramientas digitales 
+                    para modelado y simulacion de procesos logísticos como <strong> FlexSim</strong>, gestión empresarial con <strong>Odoo</strong>, gestión y análisis de bases de datos  
+                    a través de <strong>Power BI</strong> y <strong>MySQL</strong>, Investigacion de Operaciones IO aplicando modelos matemáticos y programacion lineal para 
+                    resolver problemas y tomar decisiones respaldadas con <strong>Python</strong>, <strong>Excel</strong> y <strong>Tora</strong> y diseño 3D de instalaciones con <strong>Sketchup</strong> y 
+                    <strong>AutoCAD</strong>.
+                <p>
+                    A nivel de relaciones interpersonales, en términos generales, puedo decir que tengo afinidad por el trabajo en equipo y 
+                    la generacion de ideas. Me caracterizo por ser dinámica, constante  y optimista, con una mentalidad analítica y orientada 
+                    a la mejora continua.  Siempre abierta a nuevas oportunidades de aprendizaje y actualizacion de conocimientos para aportar
+                      soluciones estratégicas  para la optimizacion de recursos.
+                </p>
+                    
+            </div>
+            <div class="interests">
+                <h2><em>Intereses Profesionales</em></h2>
+                <ul>
+                   
+                    <li><i class="fa-solid fa-truck-plane"></i> Planificación de Transporte</li>
+                    <li><i class="fa-solid fa-warehouse"></i> Gestión de Inventario</li>
+                    <li><i class="fa-solid fa-database"></i> Análisis de Datos</li>
+                    <li><i class="fa-solid fa-drafting-compass"></i> Diseño asistido por computadora CAD</li>
+                    <li><i class="fa-solid fa-industry"></i> Simulación y Optimización</li>
+                    <li><i class="fa-solid fa-computer"></i> TICs Aplicada a la Logística </li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i> Logística y cadena de suministro</li>
+                </ul>
+            </div>
+
+        
+
+            <div class="portfolio">
+                <h2><em>Experiencia y Portafolio de Proyectos</em></h2>
+                <div class="tabs">
+                    <div class="tab-btn" onclick="showTab('consultoria', this)">Experiencia</div>
+                    <div class="tab-btn" onclick="showTab('cursos', this)">Cursos y Seminarios</div>
+                    <div class="tab-btn" onclick="showTab('colaboraciones', this)">Proyectos</div>
+                </div>
+<!-- Poryectos consultoria -->
+    <div id="consultoria" class="tab-content active">
+        <div class="year" onclick="toggleYear('pc2024')">2024</div>
+        <div id="pc2024" class="year-content">
+            <ul>
+                <li><strong> Vinculación con la Sociedad. </strong><em>"Diseño de rutas para el mejoramiento del servicio de transporte comercial, modalidad escolar
+                        e institucional con las operadoras domiciliadas en la ciudad de Tulcán". 
+                        </em>Carrera de Ingeniería en Logística y Transporte. <u>Tecnología Utilizada:</u><strong> ArcGIS.</strong> <u> 
+                        Duración:</u> <strong> 114 horas.</strong> <a href="https://drive.google.com/drive/folders/1EMtuwsMS5fLF6jy2q6ZYtUoUvDcSCjvg?usp=sharing"> 
+                        Link</a></li>
+                </ul>
+            </div>
+
+        <div class="year" onclick="toggleYear('pc2023')">2023</div>
+        <div id="pc2023" class="year-content">
+            <ul>
+                <li><strong>Prácticas Pre Profesionales. </strong><em>Proceso de Compras Públicas (SERCOP), Permiso de Ocupación de Vía, Planificación, Organización,
+                        Control y Distribución de Materiales de Tránsito y Seguridad Vial en la ciudad de Tulcán.</em> <u> Entidad: </u>
+                        <strong> Gobierno Autónomo Descentralizado Municipal de Tulcán (GADMT). Dirección de Transporte Terrestre,
+                        Tránsito y Seguridad Vial. </strong> <u>Duración:</u> <strong> 240 horas.</strong> <a href="https://drive.google.com/file/d/1BPtFLbec1mBvMVcnQsnl29QF_LJZGcjy/view?usp=sharing"> 
+                            Link</a></li>
+                </ul>
+            </div>
+    </div>     
+ <!-- Cursos y Seminarios-->
+    <div id="cursos" class="tab-content">
+        <div class="year" onclick="toggleYear('c20251')">2025</div>
+        <div id="c20251" class="year-content">
+            <ul>
+                <li><strong><em>Formación de Líderes en Programación y Tecnología. </strong><u>Duración:</u> <strong> 40 horas. 
+                </em></strong> Universidad Politécnica Estatal del Carchi. Tulcán, Ecuador. 31 de marzo de 2025.
+                    <a href="https://drive.google.com/file/d/1BPtFLbec1mBvMVcnQsnl29QF_LJZGcjy/view?usp=sharing"> 
+                        Certificado</a></li>
+            </ul>
+        </div>
+
+        <div class="year" onclick="toggleYear('c2024')">2024</div>
+        <div id="c2024" class="year-content">
+            <ul>
+                <li><strong><em>Práctica de llenado de Declaraciones Aduaneras. </strong><u>Duración:</u> <strong> 10 horas. 
+                </em></strong> My Intelecto. Guayaquil, Ecuador. 24 de noviembre de 2024.
+                    <a href="https://drive.google.com/file/d/16LydC4vh6bG5W7ROsQUELipQB46eLy8g/view?usp=sharing"> 
+                        Certificado</a></li>
+                <li><strong><em>Seminario Web: Sistemas de Información Geográfica Aplicado a los Recursos Naturales. </strong><u>Duración:</u> <strong> 18 horas. 
+                </em></strong> Escuela Ambiental GIS. 29 de agosto de 2024. Asistente.
+                    <a href="https://drive.google.com/file/d/1-vay3WKJhJDQbXRMMM3aK1isyefQKoJ0/view?usp=sharing"> 
+                        Certificado</a></li>
+            </ul>
+        </div>
+
+        <div class="year" onclick="toggleYear('c2023')">2023</div>
+        <div id="c2023" class="year-content">
+            <ul>
+                <li><strong><em>Programa de Educación Financiera. </strong><u>Duración:</u> <strong> 23 de mayo al 5 de junio de 2023. 
+                </em></strong> Banco de Desarrollo Ecuador. 5 de junio de 2023. 
+                    <a href="https://drive.google.com/file/d/1U23j1lMCCkh0_bxClE-tFQfwoG5FH7dS/view?usp=sharing"> 
+                        Certificado</a></li>
+            </ul>
+        </div>
+        <div class="year" onclick="toggleYear('c2022')">2022</div>
+        <div id="c2022" class="year-content">
+            <ul>
+                <li><strong><em>Introducción a la simulación y realidad virtual. </strong><u>Duración:</u> <strong> 40 horas. 
+                </em></strong> Universidad Politécnica Estatal del Carchi. 26 de julio de 2022. 
+                    <a href="https://drive.google.com/file/d/1JS4O13rp0WAn9Hc8xC0ujlCW0r68gXvU/view?usp=sharing"> 
+                        Certificado</a></li>
+            </ul>
+        </div>
+    </div>
+
+<!-- Colaboraciones-->
+    <div id="colaboraciones" class="tab-content">
+        <div class="year" onclick="toggleYear('col2025')">2025</div>
+        <div id="col2025" class="year-content">
+            <ul>
+                <li><strong> Título Proyecto: .</strong><em>"Proyecto Recorrido Virtual Universidad Politécnica
+                    Estatal del Carchi [UPEC]". Fotografía, edición y creación del recorrido virtual a partir de fotografías 360° de Campus
+                y Fincas Experimentales de la UPEC. </em>Jefatura de Comunicación. <u>Tecnología Utilizada:</u><strong> Pano 2VR y cámara GoPro.</strong> <u> 
+                        Duración:</u> <strong> 2 meses.</strong> <a 
+                        href="https://upecedu-my.sharepoint.com/:f:/g/personal/alison_molina_upec_edu_ec/EsGkOoSGc1REk3EwOaEF6RoBXpMPq7JtY0NVM2PjTaa2ew?e=7vL4HM"> 
+                            Link</a></li>
+                </ul>
+        </div>     
+    </div>
+
+    <script>
+        function showTab(tabName, element) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function toggleYear(yearId) {
+            let yearContent = document.getElementById(yearId);
+            yearContent.style.display = yearContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
